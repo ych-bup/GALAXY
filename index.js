@@ -66,29 +66,7 @@ client.on('ready', async () => {
     client.user.setActivity(`Have some error...`)
 })
 
-const toggle = 1;
-
-client.on('message', async(message) => {
-    if(message.content == prefix + 'toggleOn'){
-        toggle = 1;
-        message.channel.send(':white_check_mark: Success.');
-    }
-    if(message.content == prefix + 'toggleOff'){
-        toggle = 0;
-        message.channel.send(':white_check_mark: Success.');
-    }
-    if(message.content == prefix + 'toggleCheck'){
-        if(toggle == 1){
-            message.channel.send(':white_check_mark: Toggle ON')
-        }
-        else{
-            message.channel.send(':x: Toggle OFF')
-        }
-    }
-})
-
 client.on('guildMemberAdd', async member => {
-    if(toggle == 1){
         if(member.guild.id == '749595288280498188') return;
         const channel = member.guild.channels.cache.find(ch => ch.name === 'traffic');
         if(!channel) return client.users.cache.get(member.id).send(embed);
@@ -99,11 +77,9 @@ client.on('guildMemberAdd', async member => {
             .setDescription(`Welcome to the server, **${member.displayName}**!\nPlease read the rules!\nWe have ${member.guild.memberCount} members now!`)
             .setFooter(`${member.displayName}`, `${member.user.displayAvatarURL()}`)
         channel.send(embed);
-    }
 });
 
 client.on('guildMemberRemove', async member => {
-    if(toggle == 1){
         if(member.guild.id == '749595288280498188') return;
         const channel = member.guild.channels.cache.find(ch => ch.name === 'traffic');
         if(!channel) return client.users.cache.get(member.id).send(embed);
@@ -115,7 +91,6 @@ client.on('guildMemberRemove', async member => {
             .setFooter(`${member.displayName}`,`${member.user.displayAvatarURL()}`)
             .setTimestamp()
         channel.send(embed);
-    }
 });
 
 client.login('NzgwNDA4MTM2NDYwNDAyNzM4.X7uptw.MgV_ua4MX4UOHpX4ie_T0Tz9uMw');
