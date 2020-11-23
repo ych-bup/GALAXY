@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 
 exports.run = async(client, message, args) => {
+    if(!message.author.id == '602011789408075777');
+    
     if(!args || args.length < 1) return message.channel.send("Must provide a command name to reload.");
     const commandName = args[0];
 
