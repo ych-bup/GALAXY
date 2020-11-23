@@ -3,6 +3,8 @@ const Enmap = require('enmap');
 const fs = require('fs');
 const mongoose = require('mongoose');
 
+const client = new Discord.Client();
+
 mongoose.connect("mongodb+srv://ych-bup:ych-bup@cluster0.oyp5x.mongodb.net/<dbname>?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true});
 
 mongoose.connection.on('connecting', function () { console.log('MongoDB: Trying to connect to MongoDB');});
@@ -11,8 +13,6 @@ mongoose.connection.on('error', function (err) { console.log('MongoDB: ERROR con
 mongoose.connection.on('close', function (err) { console.log('MongoDB: Connection closed');});
 mongoose.connection.on('reconnected', function () { console.log('MongoDB: Database link was reconnected');});
 mongoose.connection.on('disconnected', function () { console.log('MongoDB: Connection ended');});
-
-const client = new Discord.Client();
 
 fs.readdir("./commands/", (err, files) => {
     if (err) return console.error(err);
@@ -23,6 +23,40 @@ fs.readdir("./commands/", (err, files) => {
         console.log(`Attempting to load command ${commandName}`);
         client.commands.set(commandName, props);
     });
+});
+
+const guildprefix = mongoose.model('guildprefix', new mongoose.Schema({
+    serverid: String,
+    prefix: String
+}));
+
+global.guildprefix = guildprefix
+
+client.on('message', async message => {
+    const prefixmap = await guildprefix.findOne({ serverid: message.guild.id }) || { prefix: '%' };
+    let prefix = prefixmap.prefix
+    global.prefix = prefix
+
+    const args = message.content.slice(prefix.length).trim().split(/ +/);
+    const command = args.shift().toLowerCase();
+
+    const cmd = client.commands.get(command);
+
+    if(!client.commands.has(command)) return;
+
+    try {
+        cmd.run(client, message, args);
+    } 
+    catch (err) {
+        const errEmbed = new Discord.MessageEmbed()
+            .setColor('#FF4500')
+            .setTitle('ERROR')
+            .setDescription('Something wrong! Error will send to developer.')
+            .setTimestamp()
+        message.channel.send(errEmbed);
+        console.log(err);
+        client.users.cache.get('602011789408075777').send('\`\`\`' + err + '\`\`\`');
+    }
 });
 
 client.commands = new Enmap();
