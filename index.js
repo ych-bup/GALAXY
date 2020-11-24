@@ -46,7 +46,7 @@ client.on('message', async message => {
 
     if(!client.commands.has(command)) return;
     
-    if(!message.content.indexOf(prefix)) return;
+    if(message.content.indexOf(prefix) !== 0) return;
 
     try {
         cmd.run(client, message, args);
