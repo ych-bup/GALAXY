@@ -49,7 +49,7 @@ client.on('message', async message => {
     if(message.content.indexOf(prefix) !== 0) return;
 
     try {
-        cmd.run(client, message, args);
+        cmd.execute(client, message, args);
     } 
     catch (err) {
         const errEmbed = new Discord.MessageEmbed()
