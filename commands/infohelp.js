@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 exports.run = async(client, message, args) => {
-    const infoEM = new Discord.MessageEmbed()
+    const infoEMd = new Discord.MessageEmbed()
         .setColor('RANDOM')
         .setTitle('**Text Command Help**')
         .addField('botinfo', 'show this bot\'s info.')
@@ -13,5 +13,5 @@ exports.run = async(client, message, args) => {
         .addField('avatar', 'display user\'s avatar.')
         .addField('serverav', 'display server\'s icon.')
         .addField('ownerav', 'display guild owner\'s avatar.')
-    message.channel.send(infoEM);    
+    message.channel.send(infoEMd);    
 }
