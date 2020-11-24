@@ -67,7 +67,7 @@ client.commands = new Enmap();
 
 client.on('ready', async () => {
     console.log('Hosting Success!');
-    client.user.setActivity(`Have some error...`)
+    client.user.setActivity(`${client.user.username} with ${client.users.cache.size} members || ✔ active on ${client.guilds.cache.size}`)
 })
 
 client.on('guildMemberAdd', async member => {
