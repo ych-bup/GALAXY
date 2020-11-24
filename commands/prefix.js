@@ -13,7 +13,7 @@ exports.run = async(client, message, args) => {
         await new guildprefix({ serverid: message.guild.id, prefix: newPrefix }).save();
     }
     else {
-        await guildprefix.opdateOne({ serverid: message.guild.id }, { prefix: newPrefix });
+        await guildprefix.updateOne({ serverid: message.guild.id }, { prefix: newPrefix });
     }
 
     const setPrefix = await guildprefix.findOne({ serverid: message.guild.id })
