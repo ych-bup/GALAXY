@@ -33,7 +33,7 @@ const guildprefix = mongoose.model('guildprefix', new mongoose.Schema({
 global.guildprefix = guildprefix
 
 client.on('message', async message => {
-    if(message.author.bot) return;
+    if(message.author.bot) return message.channel.send(':x: You can\'t do that!');
 
     const prefixmap = await guildprefix.findOne({ serverid: message.guild.id }) || { prefix: '%' };
     let prefix = prefixmap.prefix
