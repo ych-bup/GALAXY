@@ -10,7 +10,7 @@ mongoose.connect("mongodb+srv://ych-bup:ych-bup@cluster0.oyp5x.mongodb.net/<dbna
 mongoose.connection.on('connecting', function () { console.log('MongoDB: Trying to connect to MongoDB');});
 mongoose.connection.on('connected', function () { console.log('MongoDB: Successfully connected to MongoDB');});
 mongoose.connection.on('error', function (err) { console.log('MongoDB: ERROR connecting to MongoDB' + ' - ' + err);  });
-mongoose.connection.on('close', function (err) { console.log('MongoDB: Connection closed');});
+mongoose.connection.on('close', function (err) { console.log('MongoDB: Connection closed - ' + err);});
 mongoose.connection.on('reconnected', function () { console.log('MongoDB: Database link was reconnected');});
 mongoose.connection.on('disconnected', function () { console.log('MongoDB: Connection ended');});
 
