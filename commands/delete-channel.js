@@ -6,12 +6,11 @@ exports.run = async(client, message, args) => {
 
     const botMessage = await message.channel.send('🤨 Are you sure? You can\'t undo!');
 
-    ReactionCollector.question({
-        botMessage,
-        user: message.author,
-        reactions: {
-           '✅': async () => await message.channel.delete(),
-           '❌': async () => await message.channel.send(':white_check_mark: Operation cancelled.') 
-        }
-    });
+    if(await ReactionCollector.yesNoQuestion({ botMessage, user: message.author })){
+        await message.channel.delete();
+        await message.users.cache.get(message.author.id).send(':white_check_mark: Success!');
+    }
+    else{
+        await message.channel.send(':white_check_mark: Operation cancelled.');
+    }
 }
