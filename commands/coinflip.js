@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 exports.run = async(client, message, args) => {
     const coin = ['back','front'];
 
-    const randomCoin = [Math.floor(Math.random() * coin.length)];
+    const randomCoin = coin[Math.floor(Math.random() * coin.length)];
 
     const embed = new Discord.MessageEmbed()
         .setColor('RANDOM')
