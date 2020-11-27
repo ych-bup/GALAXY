@@ -11,6 +11,6 @@ exports.run = async(client, message, args) => {
         .addField('**unmute**', 'unmute member(in text channels)')
         .addField('**nickname**','change user\'s nickname.')
         .addField('**prefix**', 'change guild prefix')
-        .setFooter('Guild Prefix is '+'``'+prefix+'``')
+        .setFooter(`Guild prefix is \`\`${prefix}\`\``)
     message.channel.send(moderateEM);
 }

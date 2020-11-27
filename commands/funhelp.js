@@ -5,6 +5,7 @@ exports.run = async(client, message, args) => {
     .setTitle('**Fun Command Help**')
     .setColor('RANDOM')
     .addField('**jackpot**','Jackpot!')
-    .setFooter('Guild Prefix is '+'``'+prefix+'``')
+    .addField('**coinflip**','Front or Back?')
+    .setFooter(`Guild prefix is \`\`${prefix}\`\``)
     message.channel.send(funEM);
 }
