@@ -13,6 +13,6 @@ exports.run = async(client, message, args) => {
         .addField('**avatar**', 'display user\'s avatar.')
         .addField('**serverav**', 'display server\'s icon.')
         .addField('**ownerav**', 'display guild owner\'s avatar.')
-        .setFooter('Guild Prefix is \`\`'+prefix+'\`\`')
+        .setFooter('Guild Prefix is ``'+prefix+'``')
     message.channel.send(infoEMd);    
 }

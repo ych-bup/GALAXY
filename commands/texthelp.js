@@ -9,6 +9,6 @@ exports.run = async(client, message, args) => {
         .addField('**ping**', 'pong!')
         .addField('**calc**', 'Calculation.')
         .addField('**search**', 'search on WolframAlpha.')
-        .setFooter('Guild Prefix is '+'\`\`'+prefix+'\`\`')
+        .setFooter('Guild Prefix is '+'``'+prefix+'``')
     message.channel.send(textEM);
 }
