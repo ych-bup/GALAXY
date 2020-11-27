@@ -22,7 +22,7 @@ exports.run = async(client, message, args) => {
             .setColor('RANDOM')
             .setTitle('**JACKPOT**')
             .setDescription('\`\`' + someMessage + '\`\` ' + '\`\`' + someMessage1 + '\`\` ' + '\`\`' + someMessage2 + '\`\`')
-            .addField('Good Luck!')
+            .addField('Good Luck!','Have a good Day!')
             .setFooter(`${message.author.tag}`,`${message.author.displayAvatarURL()}`)
         message.channel.send(JackPot);
     }
