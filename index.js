@@ -65,10 +65,20 @@ client.on('message', async message => {
 
 client.commands = new Enmap();
 
+const statusList = [
+    `with ${client.users.cache.size} members`,
+    `active on ${client.guilds.cache.size} guilds`,
+    'library : discord.js',
+    `${prefix}help will get help`
+];
+
 client.on('ready', async () => {
     console.log('Hosting Success!');
-    client.user.setActivity(`with ${client.users.cache.size} members || active on ${client.guilds.cache.size} guilds`)
-})
+    setInterval(() => {
+        const index = statusList[Math.floor(Math.random() * statusList.length)];
+        client.user.setActivity(statusList[index]);
+    }, 10000);
+});
 
 client.on('guildMemberAdd', async member => {
         if(member.guild.id == '749595288280498188') return;
