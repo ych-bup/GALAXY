@@ -3,7 +3,7 @@ const { max } = require('moment');
 
 exports.run = async(client, message, args) => {
     const user = message.mentions.members.first();
-
+    if(!user) return message.channel.send(':x: You should mention any user!');
     const percentage = Math.floor(Math.random() * (100));
 
     const embed1 = new Discord.MessageEmbed()
