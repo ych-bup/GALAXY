@@ -3,8 +3,9 @@ const Enmap = require('enmap');
 const fs = require('fs');
 const mongoose = require('mongoose');
 
+require('dotenv').config();
+
 const client = new Discord.Client();
-const { token } = require('./config.json');
 
 mongoose.connect("mongodb+srv://ych-bup:ych-bup@cluster0.oyp5x.mongodb.net/<dbname>?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true});
 
@@ -100,4 +101,4 @@ client.on('guildMemberRemove', async member => {
         channel.send(embed);
 });
 
-client.login(token);
+client.login(process.env.TOKEN);
