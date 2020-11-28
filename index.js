@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 
 require('dotenv').config();
 
+var token = process.env.token;
+
 const client = new Discord.Client();
 
 mongoose.connect("mongodb+srv://ych-bup:ych-bup@cluster0.oyp5x.mongodb.net/<dbname>?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true});
@@ -101,4 +103,4 @@ client.on('guildMemberRemove', async member => {
         channel.send(embed);
 });
 
-client.login(process.env.TOKEN);
+client.login(token);
