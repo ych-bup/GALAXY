@@ -2,14 +2,48 @@ const Discord = require('discord.js');
 const { max } = require('moment');
 
 exports.run = async(client, message, args) => {
-    const user = message.mentions.users.first();
+    const user = message.mentions.members.first();
 
     const percentage = Math.floor(Math.random() * (100));
 
-    try{
-        message.channel.send(`**${percentage}%** of **${message.author.tag}** loves **${member.tag}** 💕~`)
+    const embed1 = new Discord.MessageEmbed()
+        .setColor('RANDOM')
+        .setTitle('Couple Maker')
+        .setDescription(`**${message.author.username}** loves **${user.user.username}**,`)
+        .addField(`**${percentage}%**!!`,`try hard!`)
+        .setFooter(`${message.author.tag}`,`${message.author.displayAvatarURL()}`)
+
+    const embed2 = new Discord.MessageEmbed()
+        .setColor('RANDOM')
+        .setTitle('Couple Maker')
+        .setDescription(`**${message.author.username}** loves **${user.user.username}**,`)
+        .addField(`**${percentage}%**!!`,`not bad!`)
+        .setFooter(`${message.author.tag}`,`${message.author.displayAvatarURL()}`)
+    
+    const embed3 = new Discord.MessageEmbed()
+        .setColor('RANDOM')
+        .setTitle('Couple Maker')
+        .setDescription(`**${message.author.username}** loves **${user.user.username}**,`)
+        .addField(`**${percentage}%**!!`,`you have a chance!`)
+        .setFooter(`${message.author.tag}`,`${message.author.displayAvatarURL()}`)
+
+    const embed4 = new Discord.MessageEmbed()
+        .setColor('RANDOM')
+        .setTitle('Couple Maker')
+        .setDescription(`**${message.author.username}** loves **${user.user.username}**,`)
+        .addField(`**${percentage}%**!!`,`Ohh! Let's confess right now!`)
+        .setFooter(`${message.author.tag}`,`${message.author.displayAvatarURL()}`)
+
+    if(percentage <= 25){
+        return message.channel.send(embed1);
     }
-    catch(err) {
-        console.log(err);
+    else if(percentage <= 50){
+        return message.channel.send(embed2);
+    }
+    else if(percentage <= 75){
+        return message.channel.send(embed3);
+    }
+    else if(percentage <= 100){
+        return message.channel.send(embed4);
     }
 }
