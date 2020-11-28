@@ -68,8 +68,7 @@ client.commands = new Enmap();
 const statusList = [
     `with ${client.users.cache.size} members`,
     `active on ${client.guilds.cache.size} guilds`,
-    'library : discord.js',
-    `${prefix}help will get help`
+    'library : discord.js'
 ];
 
 client.on('ready', async () => {
