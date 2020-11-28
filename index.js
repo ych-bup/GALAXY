@@ -68,17 +68,8 @@ client.commands = new Enmap();
 
 
 client.on('ready', async () => {
-    const statusList = [
-        `with ${client.users.cache.size} members`,
-        `active on ${client.guilds.cache.size} guilds`,
-        'library : discord.js'
-    ];
-    const index = Math.floor(Math.random() * (statusList.length - 1) + 1);
-    console.log('Hosting Success!');
-    client.user.setActivity(statusList[index]);
-    setInterval(() => {
-        client.user.setActivity(statusList[index]);
-    }, 10);
+    console.log('We logged in ' + client.user.tag + '!');
+    client.user.setActivity({ type: "WATCHING"}, `${client.guilds.cache.size} guilds`);
 });
 
 client.on('guildMemberAdd', async member => {
