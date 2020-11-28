@@ -4,6 +4,7 @@ exports.run = async(client, message, args) => {
     const moderateEM = new Discord.MessageEmbed()
         .setTitle('**Moderation Command Help**')
         .setColor('RANDOM')
+        .setThumbnail(client.user.displayAvatarURL())
         .addField('**kick**', 'kick mentioned member.')
         .addField('**ban**', 'ban mentioned member.')
         .addField('**purge**', 'delete messages.')

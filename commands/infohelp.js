@@ -5,6 +5,7 @@ exports.run = async(client, message, args) => {
         .setColor('RANDOM')
         .setTitle('**Text Command Help**')
         .addField('**botinfo**', 'show this bot\'s info.')
+        .setThumbnail(client.user.displayAvatarURL())
         .addField('**read**', 'prefix info.')
         .addField('**user**', 'show how many users use this bot.')
         .addField('**guild**', 'show how many servers this bot is active on.')
