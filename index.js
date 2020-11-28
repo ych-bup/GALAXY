@@ -65,13 +65,14 @@ client.on('message', async message => {
 
 client.commands = new Enmap();
 
-const statusList = [
-    `with ${client.users.cache.size} members`,
-    `active on ${client.guilds.cache.size} guilds`,
-    'library : discord.js'
-];
+
 
 client.on('ready', async () => {
+    const statusList = [
+        `with ${client.users.cache.size} members`,
+        `active on ${client.guilds.cache.size} guilds`,
+        'library : discord.js'
+    ];
     const index = Math.floor(Math.random() * (statusList.length - 1) + 1);
     console.log('Hosting Success!');
     client.user.setActivity(statusList[index]);
