@@ -74,7 +74,7 @@ const statusList = [
 client.on('ready', async () => {
     console.log('Hosting Success!');
     setInterval(() => {
-        const index = statusList[Math.floor(Math.random() * statusList.length)];
+        const index = Math.floor(Math.random() * (statusList.length - 1) + 1);
         client.user.setActivity(statusList[index]);
     }, 10000);
 });
