@@ -4,6 +4,7 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 
 const client = new Discord.Client();
+const config = require('./config.json');
 
 mongoose.connect("mongodb+srv://ych-bup:ych-bup@cluster0.oyp5x.mongodb.net/<dbname>?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true});
 
@@ -99,4 +100,4 @@ client.on('guildMemberRemove', async member => {
         channel.send(embed);
 });
 
-client.login('NzgwNDA4MTM2NDYwNDAyNzM4.X7uptw.MgV_ua4MX4UOHpX4ie_T0Tz9uMw');
+client.login(config.token);
