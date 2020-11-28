@@ -78,7 +78,7 @@ client.on('ready', async () => {
     client.user.setActivity(statusList[index]);
     setInterval(() => {
         client.user.setActivity(statusList[index]);
-    }, 10000);
+    }, 3000);
 });
 
 client.on('guildMemberAdd', async member => {
