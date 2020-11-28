@@ -10,6 +10,7 @@ exports.run = async(client, message, args) => {
         .setColor('RANDOM')
         .setTitle('Couple Maker')
         .setDescription(`**${message.author.username}** loves **${user.user.username}**,`)
+        .setThumbnail('https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Coraz%C3%B3n.svg/220px-Coraz%C3%B3n.svg.png')
         .addField(`**${percentage}%**!!`,`try hard!`)
         .setFooter(`${message.author.tag}`,`${message.author.displayAvatarURL()}`)
 
@@ -17,6 +18,7 @@ exports.run = async(client, message, args) => {
         .setColor('RANDOM')
         .setTitle('Couple Maker')
         .setDescription(`**${message.author.username}** loves **${user.user.username}**,`)
+        .setThumbnail('https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Coraz%C3%B3n.svg/220px-Coraz%C3%B3n.svg.png')
         .addField(`**${percentage}%**!!`,`not bad!`)
         .setFooter(`${message.author.tag}`,`${message.author.displayAvatarURL()}`)
     
@@ -24,6 +26,7 @@ exports.run = async(client, message, args) => {
         .setColor('RANDOM')
         .setTitle('Couple Maker')
         .setDescription(`**${message.author.username}** loves **${user.user.username}**,`)
+        .setThumbnail('https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Coraz%C3%B3n.svg/220px-Coraz%C3%B3n.svg.png')
         .addField(`**${percentage}%**!!`,`you have a chance!`)
         .setFooter(`${message.author.tag}`,`${message.author.displayAvatarURL()}`)
 
@@ -31,6 +34,7 @@ exports.run = async(client, message, args) => {
         .setColor('RANDOM')
         .setTitle('Couple Maker')
         .setDescription(`**${message.author.username}** loves **${user.user.username}**,`)
+        .setThumbnail('https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Coraz%C3%B3n.svg/220px-Coraz%C3%B3n.svg.png')
         .addField(`**${percentage}%**!!`,`Ohh! Let's confess right now!`)
         .setFooter(`${message.author.tag}`,`${message.author.displayAvatarURL()}`)
 
