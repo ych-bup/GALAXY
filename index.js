@@ -68,8 +68,8 @@ client.commands = new Enmap();
 
 
 client.on('ready', async () => {
-    console.log('We logged in as' + client.user.tag + '!');
-    client.user.setActivity(`${client.guilds.cache.size} guilds`,{ type : "WATCHING" });
+    console.log('We logged in as ' + client.user.tag + '!');
+    client.user.setActivity(`👁‍🗨 ${client.guilds.cache.size} guilds`,{ type : "WATCHING" });
 });
 
 client.on('guildMemberAdd', async member => {
