@@ -7,6 +7,6 @@ exports.run = async(client, message, args) => {
     .addField('**jackpot**','Jackpot!')
     .addField('**coinflip**','Front or Back?')
     .addField('**cmaker**','Couple maker!')
-    .setFooter(`Guild prefix is ``${prefix}```)
+    .setFooter('Guild prefix is ``'+prefix+'``')
     message.channel.send(funEM);
 }
