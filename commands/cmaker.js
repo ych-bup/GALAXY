@@ -6,5 +6,5 @@ exports.run = async(client, message, args) => {
 
     const percentage = Math.floor(Math.random() * (100));
 
-    message.channel.send(`**${percentage}%** of **${message.author.username}** loves **${user}** 💕~`)
+    message.channel.send(`**${percentage}%** of **${message.author.tag}** loves **${user.tag}** 💕~`)
 }
