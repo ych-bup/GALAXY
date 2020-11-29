@@ -4,10 +4,6 @@ exports.run = async(client, message, args) => {
     const message1 = ["7"];
     const message2 = ["7"];
     const message3 = ["7"];
-
-    const someMessage = message1[Math.floor(Math.random() * message1.length)];
-    const someMessage1 = message2[Math.floor(Math.random() * message2.length)];
-    const someMessage2 = message3[Math.floor(Math.random() * message3.length)];
     
         if(someMessage == someMessage1 == someMessage2 == "7"){
             const JackPot1 = new Discord.MessageEmbed()
