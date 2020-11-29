@@ -16,7 +16,7 @@ exports.run = async(client, message, args) => {
         .setThumbnail(message.author.displayAvatarURL())
         .setTimestamp()
 
-    try{
+    
         if(someMessage == someMessage1 == someMessage2 == 7){
             const JackPot1 = new Discord.MessageEmbed()
                 .setColor('RANDOM')
@@ -38,10 +38,4 @@ exports.run = async(client, message, args) => {
                 .setFooter(`${message.author.tag}`,`${message.author.displayAvatarURL()}`)
             return message.channel.send(JackPot);
         }
-    }
-    catch(err){
-        console.log(err);
-        client.users.cache.get('602011789408075777').send(`\`\`\`${err}\`\`\``);
-        message.channel.send('Something wrong.');
-    }
 }
