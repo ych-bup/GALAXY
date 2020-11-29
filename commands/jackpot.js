@@ -16,7 +16,7 @@ exports.run = async(client, message, args) => {
         .setDescription('\`\`' + someMessage + '\`\` ' + '\`\`' + someMessage1 + '\`\` ' + '\`\`' + someMessage2 + '\`\`')
         .addField('JACK POT!!!!','Have a good Day!')
         .setFooter(`${message.author.tag}`,`${message.author.displayAvatarURL()}`)
-        message.channel.send(JackPot1);
+        return message.channel.send(JackPot1);
     }
     else{
         const JackPot = new Discord.MessageEmbed()
@@ -25,6 +25,6 @@ exports.run = async(client, message, args) => {
             .setDescription('\`\`' + someMessage + '\`\` ' + '\`\`' + someMessage1 + '\`\` ' + '\`\`' + someMessage2 + '\`\`')
             .addField('Good Luck!','Have a good Day!')
             .setFooter(`${message.author.tag}`,`${message.author.displayAvatarURL()}`)
-        message.channel.send(JackPot);
+        return message.channel.send(JackPot);
     }
 }
