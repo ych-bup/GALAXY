@@ -9,7 +9,7 @@ exports.run = async(client, message, args) => {
     const someMessage1 = message2[Math.floor(Math.random() * message2.length)];
     const someMessage2 = message3[Math.floor(Math.random() * message3.length)];
 
-    if(someMessage == someMessage1 == someMessage2){
+    if(someMessage == someMessage1 == someMessage2 == 7){
         const JackPot1 = new Discord.MessageEmbed()
         .setColor('RANDOM')
         .setTitle('**JACKPOT**')
