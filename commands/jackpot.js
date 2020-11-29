@@ -21,7 +21,7 @@ exports.run = async(client, message, args) => {
         .setFooter(`${message.author.tag}`,`${message.author.displayAvatarURL()}`)
 
         
-    if(message1 == message2 == message3 == "7"){
+    if(message1 == message2 == message3 == 7){
         return message.channel.send(JackPot1);
     }
     else{
