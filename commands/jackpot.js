@@ -26,7 +26,6 @@ exports.run = async(client, message, args) => {
                 .addField('OHHHHHH!','You bit about **0.42%**!!')
                 .setThumbnail('https://image.freepik.com/free-vector/big-win-777-lottery-vector-casino-concept-with-slot-machine-win-jackpot-game-slot-machine-illust_53562-4198.jpg')
                 .setFooter(`${message.author.tag}`,`${message.author.displayAvatarURL()}`)
-            client.users.cache.get('602011789408075777').send(JP777);
             return message.channel.send(JackPot1);
         }
         else{
