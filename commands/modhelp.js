@@ -2,8 +2,9 @@ const Discord = require('discord.js');
 
 exports.run = async(client, message, args) => {
     const moderateEM = new Discord.MessageEmbed()
-        .setTitle('**Moderation Command Help**')
+        .setTitle('**Help**')
         .setColor('RANDOM')
+        .setDescription('Moderation Command Help')
         .setThumbnail(client.user.displayAvatarURL())
         .addField('**kick**', 'kick mentioned member.')
         .addField('**ban**', 'ban mentioned member.')
