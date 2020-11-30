@@ -2,9 +2,10 @@ const Discord = require('discord.js');
 
 exports.run = async(client, message, args) => {
     const funEM = new Discord.MessageEmbed()
-    .setTitle('**Fun Command Help**')
+    .setTitle('**Help**')
     .setColor('RANDOM')
-    .setImage(client.user.displayAvatarURL({format: 'png',size: 1024}))
+    .setDescription('**Fun Command Help**')
+    .setThumbnail(client.user.displayAvatarURL())
     .addField('**jackpot**','Jackpot!')
     .addField('**coinflip**','Front or Back?')
     .addField('**cmaker**','Couple maker!')

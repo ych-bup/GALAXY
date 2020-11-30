@@ -3,7 +3,8 @@ const Discord = require('discord.js');
 exports.run = async(client, message, args) => {
     const infoEMd = new Discord.MessageEmbed()
         .setColor('RANDOM')
-        .setTitle('**Text Command Help**')
+        .setTitle('**Help**')
+        .setDescription('**Text Command Help**')
         .addField('**botinfo**', 'show this bot\'s info.')
         .setThumbnail(client.user.displayAvatarURL())
         .addField('**read**', 'prefix info.')
