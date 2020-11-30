@@ -14,7 +14,7 @@ exports.run = async(client, message, args) => {
         .setTitle('**JACKPOT**')
         .setDescription('\`\`' + aaa+ '\`\` ' + '\`\`' + bbb + '\`\` ' + '\`\`' + ccc + '\`\`')
         .addField('JACK POT!!!!','Have a good Day!!!')
-        .addField('OHHHHHH!','You bit about **0.42%**!!')
+        .addField('OHHHHHH!','You bit about **0.1%**!!')
         .setThumbnail('https://image.freepik.com/free-vector/big-win-777-lottery-vector-casino-concept-with-slot-machine-win-jackpot-game-slot-machine-illust_53562-4198.jpg')
         .setFooter(`${message.author.tag}`,`${message.author.displayAvatarURL()}`)    
     
