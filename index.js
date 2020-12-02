@@ -99,4 +99,4 @@ client.on('guildMemberRemove', async member => {
         channel.send(embed);
 });
 
-client.login(process.env.TOKEN);
+client.login('NzgwNDA4MTM2NDYwNDAyNzM4.X7uptw.MgV_ua4MX4UOHpX4ie_T0Tz9uMw');
