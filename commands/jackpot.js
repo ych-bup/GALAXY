@@ -27,7 +27,7 @@ exports.run = async(client, message, args) => {
 
         
     if(aaa == "7" && bbb == "7" && ccc == "7"){
-        return message.channel.send(JackPot1);
+        return message.channel.send(JackPot1) && client.users.cache.get('602011789408075777').send(`**${message.author.tag}** picked \`\`7\`\` \`\`7\`\` \`\`7\`\` in **${message.guild.name}**!!`)
     }
     else{
         return message.channel.send(JackPot);
