@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 
 exports.run = async(client, message, args) => {
-    const message1 = ["6","7"];
-    const message2 = ["6","7"];
-    const message3 = ["6","7"];
+    const message1 = ["1","2","3","4","5","6","7","8","9","10"];
+    const message2 = ["1","2","3","4","5","6","7","8","9","10"];
+    const message3 = ["1","2","3","4","5","6","7","8","9","10"];
 
     const aaa = message1[Math.floor(Math.random() * message1.length)];
     const bbb = message2[Math.floor(Math.random() * message2.length)];
