@@ -14,7 +14,7 @@ exports.run = async(client, message, args) => {
     .addFields(    
         { name: '**Emoji Count**', value: `${message.guild.emojis.cache.size}`,inline : true},
         { name: '**Role Count**', value: `${message.guild.roles.cache.size}`, inline : true},
-        { name: '**Server Owner**', value: `${message.guild.owner.user.tag}`,inline : true},
+        { name: '**Server Owner**', value: `${message.guild.owner}`,inline : true},
     )
     .addFields(
         { name: '**Server ID**', value: `${message.guild.id}`,inline : true},
