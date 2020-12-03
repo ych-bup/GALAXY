@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 
-exports.run = async(client, message, args) => {
-    const user = message.mentions.members.first();
-    
+exports.run = async(client, message, args) => {  
     let modlogs = await warnuser.find({ serverid: message.guild.id })
 
     modlogs = modlogs.map(element => element.userid)
