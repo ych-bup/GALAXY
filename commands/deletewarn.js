@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 exports.run = async(client, message, args) => {
-    const user = message.mentions.members.first();
+    const user = message.mentions.users.first();
     let e = await warnuser.findOne({ serverid: message.guild.id, userid: user.id })
     if(!e) return message.channel.send('Don\'t exist.');
 
