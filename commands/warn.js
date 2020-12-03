@@ -19,7 +19,7 @@ exports.run = async(client, message, args) => {
             userid: user.id,
             type: "warn",
             reason: reason1
-        })
+        }).save()
     }
     catch(err) {
         console.log(err);
