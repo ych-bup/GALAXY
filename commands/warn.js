@@ -13,7 +13,7 @@ exports.run = async(client, message, args) => {
         .setColor('#008080')
         .setDescription(`:white_check_mark: **${user.user.username}** is warned by **${message.author.tag}**! [${reason1}]`)
     
-        try{
+    try{
         await new warnUser({
             serverid: message.guild.id,
             userid: user.id,
