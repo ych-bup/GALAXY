@@ -32,7 +32,7 @@ const guildprefix = mongoose.model('guildprefix', new mongoose.Schema({
     prefix: String
 }));
 
-const warnUser = mongoose.model('warnUser', new mongoose.Schema({
+const warnuser = mongoose.model('warnuser', new mongoose.Schema({
     serverid: String,
     userid: String,
     type: String,
@@ -41,7 +41,7 @@ const warnUser = mongoose.model('warnUser', new mongoose.Schema({
 }))
 
 global.guildprefix = guildprefix
-global.warnUser = warnUser
+global.warnuser = warnuser
 
 client.on('message', async message => {
     if(message.author.bot) return;

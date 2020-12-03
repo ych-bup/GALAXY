@@ -14,7 +14,7 @@ exports.run = async(client, message, args) => {
         .setDescription(`:white_check_mark: **${user.user.username}** is warned by **${message.author.tag}**! [${reason1}]`)
     
     try{
-        await new warnUser({
+        await new warnuser({
             serverid: message.guild.id,
             userid: user.id,
             type: "warn",
