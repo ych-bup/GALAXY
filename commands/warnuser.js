@@ -1,5 +1,8 @@
 const Discord = require('discord.js');
 
 exports.run = async(client, message, args) => {
-    message.channel.send(warnuser.join(" || ") ? warnuser.join(" || ") : "경고받은 사람 없음")
+    const user = message.mentions.members.first();
+    warnuser = warnuser.map(element => `**userid** : ${user.id}`)
+
+    message.channel.send(warnuser[0]);
 }
