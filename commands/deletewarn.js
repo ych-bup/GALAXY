@@ -2,7 +2,12 @@ const Discord = require('discord.js');
 
 exports.run = async(client, message, args) => {
     const user = message.mentions.members.first();
-    let e = await warnUser.findOne({ serverid: message.guild.id, userid: user.id })
+    let e = await warnUser.findOne({
+        serverid: message.guild.id,
+        userid: user.id,
+        type: "warn",
+        reason: reason1
+    })
     if(!e) return message.channel.send(':x: That user isn\'t warned.');
     if(!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send(':x: You don\'t have permission.');
 
