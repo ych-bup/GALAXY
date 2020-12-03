@@ -6,8 +6,8 @@ exports.run = async(client, message, args) => {
     const user = message.mentions.members.first();
 
     if(!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send(':x: You don\'t have permission!');
-    if(!reason1 || !user) return message.channel.send(`:x: **INVALID COMMAND** \`\`\`${prefix}warn [ mention ] [ reason ]`);
-    if(!reason1 && !user) return message.channel.send(`:x: **INVALID COMMAND** \`\`\`${prefix}warn [ mention ] [ reason ]`);
+    if(!reason1 || !user) return message.channel.send(`:x: **INVALID COMMAND** \`\`\`${prefix}warn [ mention ] [ reason ]\`\`\``);
+    if(!reason1 && !user) return message.channel.send(`:x: **INVALID COMMAND** \`\`\`${prefix}warn [ mention ] [ reason ]\`\`\``);
 
     const successEM = new Discord.MessageEmbed()
         .setColor('#008080')
@@ -28,7 +28,7 @@ exports.run = async(client, message, args) => {
 
     try{
         message.channel.send(successEM);
-        client.users.cache.get(userID).send(`😥 You got warned from **${message.guild.name}** by **${message.author.username}**!\nBe careful!\n\`\`\`reason: ${reason1}\`\`\``);
+        client.users.cache.get(user.id).send(`😥 You got warned from **${message.guild.name}** by **${message.author.username}**!\nBe careful!\n\`\`\`reason: ${reason1}\`\`\``);
     } catch(err){}
 
 }
