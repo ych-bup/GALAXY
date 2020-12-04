@@ -31,6 +31,12 @@ exports.run = async(client, message, args) => {
             return message.channel.send(em);
         }    
     }
+    if(!message.guild.me.hasPermission('KICK_MEMBERS')){
+        const eeeeeee = new Discord.MessageEmbed()
+            .setColor('#FF4500')
+            .setDescription("❌ I don't have permission.")
+        return message.channel.send(eeeeeee);
+    }
     if (!message.member.hasPermission("KICK_MEMBERS")){
         const embem = new Discord.MessageEmbed()
         .setColor('#FF4500')
