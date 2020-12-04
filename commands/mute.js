@@ -59,11 +59,15 @@ exports.run = async(client, message, args) => {
             .setTimestamp()
             return message.channel.send(eemm);
     }
-    if(user && reason){
+    try{
         user.roles.add(role);
         const embed4 = new Discord.MessageEmbed()
         .setDescription(`:white_check_mark: **${user.user.username}** is now muted! [${reason}]`)
         .setColor('RANDOM')
         message.channel.send(embed4);
+    }
+    catch(Err){
+        message.channel.send(':x: Something Wrong.\`\`\`'+ Err +'\`\`\`');
+        console.log(Err);
     }
 }
