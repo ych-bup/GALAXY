@@ -34,7 +34,7 @@ const guildprefix = mongoose.model('guildprefix', new mongoose.Schema({
 
 const warnuser = mongoose.model('warnuser', new mongoose.Schema({
     serverid: String,
-    userid: String,
+    usertag: String,
     type: String,
     reason: String
 

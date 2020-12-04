@@ -3,8 +3,7 @@ const Discord = require('discord.js');
 exports.run = async(client, message, args) => {  
     let modlogs = await warnuser.find({ serverid: message.guild.id })
 
-    modlogs = modlogs.map(element => element.userid)
+    modlogs = modlogs.map(element => element.usertag)
 
-    const warnUser = client.users.cache.find(user => user.id === modlogs)
-    message.channel.send(`${warnUser.tag.join(" | ").substring(21) ? warnUser.tag.join(" | ").substring(21) : "No user."}`);
+    message.channel.send(`${modlogs.join(" | ").substring(21) ? modlogs.join(" | ").substring(21) : "No user."}`);
 }

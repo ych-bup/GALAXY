@@ -16,7 +16,7 @@ exports.run = async(client, message, args) => {
     try{
         await new warnuser({
             serverid: message.guild.id,
-            userid: user.id,
+            usertag: user.tag,
             type: "warn",
             reason: reason1
         }).save()
