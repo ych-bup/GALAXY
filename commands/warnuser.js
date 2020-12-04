@@ -5,5 +5,6 @@ exports.run = async(client, message, args) => {
 
     modlogs = modlogs.map(element => element.userid)
 
-    message.channel.send(`${modlogs.join(" | ").substring(21) ? modlogs.join(" | ").substring(21) : "No user."}`);
+    const warnUser = client.users.cache.find(user => user.id === modlogs)
+    message.channel.send(`${warnUser.join(" | ").substring(21) ? warnUser.join(" | ").substring(21) : "No user."}`);
 }
