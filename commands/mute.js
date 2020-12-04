@@ -31,12 +31,6 @@ exports.run = async(client, message, args) => {
             return message.channel.send(em);
         }    
     }
-    if(!message.guild.me.hasPermission('KICK_MEMBERS')){
-        const eeeeeee = new Discord.MessageEmbed()
-            .setColor('#FF4500')
-            .setDescription("❌ I don't have permission.")
-        return message.channel.send(eeeeeee);
-    }
     if (!message.member.hasPermission("KICK_MEMBERS")){
         const embem = new Discord.MessageEmbed()
         .setColor('#FF4500')
@@ -51,24 +45,11 @@ exports.run = async(client, message, args) => {
         .setTimestamp()
         return message.channel.send(ambed);
     }
-    if(!user && !reason){
-        const eemm = new Discord.MessageEmbed()
-            .setColor('#FF4500')
-            .setTitle('**INVALID COMMAND**')
-            .setDescription(`${perfix}mute [mention] [reason]`)
-            .setTimestamp()
-            return message.channel.send(eemm);
-    }
-    try{
+    if(user && reason){
         user.roles.add(role);
+        const embed4 = new Discord.MessageEmbed()
+        .setDescription(`:white_check_mark: **${user.user.username}** is now muted! [${reason}]`)
+        .setColor('RANDOM')
+        message.channel.send(embed4);
     }
-    catch(Err){
-        message.channel.send(':x: Something Wrong.\`\`\`'+ Err +'\`\`\`');
-        console.log(Err);
-    }
-
-    const embed4 = new Discord.MessageEmbed()
-    .setDescription(`:white_check_mark: **${user.user.username}** is now muted! [${reason}]`)
-    .setColor('RANDOM')
-    message.channel.send(embed4);
 }
