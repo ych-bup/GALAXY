@@ -61,7 +61,6 @@ client.on('message', async message => {
 
     try {
         cmd.run(client, message, args);
-        message.channel.send('**NOTICE** : Please do not use commands related to \`\`warn\`\`.')
     } 
     catch (err) {
         const errEmbed = new Discord.MessageEmbed()
