@@ -8,6 +8,7 @@ exports.run = async(client, message, args) => {
     if(!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send(':x: You don\'t have permission!');
     if(!reason1 || !user) return message.channel.send(`:x: **INVALID COMMAND** \`\`\`${prefix}warn [ mention ] [ reason ]\`\`\``);
     if(!reason1 && !user) return message.channel.send(`:x: **INVALID COMMAND** \`\`\`${prefix}warn [ mention ] [ reason ]\`\`\``);
+    if(user.user.bot) return message.channel.send(':x: You can\'t warn bot!');
 
     const successEM = new Discord.MessageEmbed()
         .setColor('#008080')
