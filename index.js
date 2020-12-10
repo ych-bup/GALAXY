@@ -72,6 +72,10 @@ client.on('message', async message => {
         console.log(err);
         client.users.cache.get('602011789408075777').send('\`\`\`' + err + '\`\`\`');
     }
+
+    if(console.log('We logged in as Ich.BOT#9016!')){
+        client.users.cache.get('602011789408075777').send(':white_check_mark: Build Succeeded.');
+    }
 });
 
 client.commands = new Enmap();
