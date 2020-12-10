@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 
 exports.run = async(client, message, args) => {
+    if(!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send('❌ You don\'t have permission.');
+
     const fuck = message.content.split(" ").slice(1).join(" ");
     let e = await warnuser.findOne({ serverid: message.guild.id, userid: fuck })
     if(!e) return message.channel.send('❌ Don\'t exist.');
