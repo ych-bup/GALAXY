@@ -47,10 +47,6 @@ const warnuser = mongoose.model('warnuser', new mongoose.Schema({
 global.customStatus = customStatus
 global.guildprefix = guildprefix
 global.warnuser = warnuser
-    
-const statusmap = await customStatus.findOne({}) || { custom: `Active on 👁‍🗨 ${client.guilds.cache.size} guilds`};  
-let custom = statusmap.custom
-global.custom = custom
 
 client.on('message', async message => {
     if(message.author.bot) return;
@@ -88,6 +84,10 @@ client.on('message', async message => {
 client.commands = new Enmap();
 
 client.on('ready', async () => {
+    const statusmap = await customStatus.findOne({}) || { custom: `Active on 👁‍🗨 ${client.guilds.cache.size} guilds`};  
+    let custom = statusmap.custom
+    global.custom = custom
+    
     console.log('We logged in as ' + client.user.tag + '!');
     client.user.setActivity(`${custom}`,{ type : "PLAYING" });
 });
