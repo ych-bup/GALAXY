@@ -27,6 +27,10 @@ fs.readdir("./commands/", (err, files) => {
     });
 });
 
+const customStatus = mongoose.model('customStatus', new mongoose.Schema({
+    custom: String
+}));
+
 const guildprefix = mongoose.model('guildprefix', new mongoose.Schema({
     serverid: String,
     prefix: String
@@ -40,11 +44,16 @@ const warnuser = mongoose.model('warnuser', new mongoose.Schema({
 
 }))
 
+global.customStatus = customStatus
 global.guildprefix = guildprefix
 global.warnuser = warnuser
 
 client.on('message', async message => {
     if(message.author.bot) return;
+
+    const statusmap = await customStatus.findOne({}) || { custom: `Active on 👁‍🗨 ${client.guilds.cache.size} guilds`};
+    let custom = statusmap.custom
+    global.custom = custom
 
     const prefixmap = await guildprefix.findOne({ serverid: message.guild.id }) || { prefix: '%' };
     let prefix = prefixmap.prefix
@@ -78,7 +87,7 @@ client.commands = new Enmap();
 
 client.on('ready', async () => {
     console.log('We logged in as ' + client.user.tag + '!');
-    client.user.setActivity(`👁‍🗨 ${client.guilds.cache.size} guilds`,{ type : "WATCHING" });
+    client.user.setActivity(`${custom}`,{ type : "WATCHING" });
 });
 
 client.on('guildMemberAdd', async member => {
