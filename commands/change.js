@@ -6,8 +6,6 @@ exports.run = async(client, message, args) => {
 
     if(!newCustom) return message.channel.send('❌ **INVALID COMMAND** \`\`\`'+ prefix + 'change [ custom status ]\`\`\`');
     if(!message.author.id == '602011789408075777') return message.channel.send('❌ This command can use only bot developer.');
-
-    const test = await customStatus.findOne({});
     
     try{
         await customStatus.updateOne({custom: newCustom});
