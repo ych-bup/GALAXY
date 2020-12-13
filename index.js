@@ -47,13 +47,15 @@ const warnuser = mongoose.model('warnuser', new mongoose.Schema({
 global.customStatus = customStatus
 global.guildprefix = guildprefix
 global.warnuser = warnuser
+    
+const statusmap = await customStatus.findOne({}) || { custom: `Active on 👁‍🗨 ${client.guilds.cache.size} guilds`};  
+let custom = statusmap.custom
+global.custom = custom
 
 client.on('message', async message => {
     if(message.author.bot) return;
 
-    const statusmap = await customStatus.findOne({}) || { custom: `Active on 👁‍🗨 ${client.guilds.cache.size} guilds`};
-    let custom = statusmap.custom
-    global.custom = custom
+
 
     const prefixmap = await guildprefix.findOne({ serverid: message.guild.id }) || { prefix: '%' };
     let prefix = prefixmap.prefix
@@ -87,7 +89,7 @@ client.commands = new Enmap();
 
 client.on('ready', async () => {
     console.log('We logged in as ' + client.user.tag + '!');
-    client.user.setActivity(`${custom}`,{ type : "WATCHING" });
+    client.user.setActivity(`${custom}`,{ type : "PLAYING" });
 });
 
 client.on('guildMemberAdd', async member => {
