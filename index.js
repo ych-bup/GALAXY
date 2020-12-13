@@ -84,10 +84,10 @@ client.on('message', async message => {
 client.commands = new Enmap();
 
 client.on('ready', async () => {
-    const statusmap = await customStatus.findOne({ custom: `Active on 👁‍🗨 ${client.guilds.cache.size} guilds`});  
+    const statusmap = await customStatus.findOne({}) || { custom: `Active on 👁‍🗨 ${client.guilds.cache.size} guilds`};  
     let custom = statusmap.custom
     global.custom = custom
-
+    
     console.log('We logged in as ' + client.user.tag + '!');
     client.user.setActivity(`${custom}`,{ type : "PLAYING" });
 });
