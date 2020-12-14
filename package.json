@@ -18,7 +18,7 @@
   "homepage": "https://github.com/ych-bup/Ich.BOT#readme",
   "dependencies": {
     "canvas": "^2.6.1",
-    "discord.js": "^12.5.0",
+    "discord.js": "^12.5.1",
     "discord.js-collector": "^1.7.6",
     "dotenv": "^8.2.0",
     "enmap": "^5.3.1",
