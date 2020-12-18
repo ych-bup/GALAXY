@@ -9,5 +9,5 @@ exports.run = async(client, message, args) => {
 
     const usertag = client.users.cache.find(user => user.id === `${modlogs}`)
 
-    message.channel.send(`${modlogs.join(" | ").substring(21) ? modlogs.join(" | ").substring(21) : "❌ No user."}`);
+    message.channel.send(`${modlogs.join("\n") ? modlogs.join("\n") : "❌ No user."}`);
 }
