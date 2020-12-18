@@ -16,7 +16,7 @@ exports.run = async(client, message, args) => {
             { name: '**ID**', value: `${message.author.id}`, inline: true},
             { name: '**Account created on**', value: `${moment.utc(message.author.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")} (utc +0)`, inline: true},
         )
-        .setThumbnail(message.author.avatarURL())
+        .setThumbnail(message.author.avatarURL({dynamic:true}))
         .setTimestamp()
         .setFooter(`Command is used by ${message.author.username}`)
         return message.channel.send(embed0);
@@ -34,7 +34,7 @@ exports.run = async(client, message, args) => {
         { name: '**ID**', value: `${user.id}`, inline: true},
         { name: '**Account created on**', value: `${moment.utc(user.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")} (utc +0)`, inline: true},
     )
-    .setThumbnail(`${user.displayAvatarURL()}`)
+    .setThumbnail(`${user.displayAvatarURL({dynamic: true})}`)
     .setFooter(`Command is used by ${message.author.username}`)
     message.channel.send(embed)
 }
