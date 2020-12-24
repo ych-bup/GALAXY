@@ -95,26 +95,26 @@ client.on('ready', async () => {
 client.on('guildMemberAdd', async member => {
         if(member.guild.id == '749595288280498188') return;
         const channel = member.guild.channels.cache.find(ch => ch.name === 'traffic');
-        if(!channel) return client.users.cache.get(member.id).send(embed);
+        if(!channel) return;
         const embed = new Discord.MessageEmbed()
             .setColor('#FF4500')
             .setTitle(`***WELCOME TO ${member.guild.name}!***`)
             .setThumbnail(`${member.guild.iconURL({ format: 'png', size: 128 })}`)
             .setDescription(`Welcome to the server, **${member.displayName}**!\nPlease read the rules!\nWe have ${member.guild.memberCount} members now!`)
-            .setFooter(`${member.displayName}`, `${member.user.displayAvatarURL()}`)
+            .setFooter(`${member.user.username}`, `${member.user.displayAvatarURL()}`)
         channel.send(embed);
 });
 
 client.on('guildMemberRemove', async member => {
         if(member.guild.id == '749595288280498188') return;
         const channel = member.guild.channels.cache.find(ch => ch.name === 'traffic');
-        if(!channel) return client.users.cache.get(member.id).send(embed);
+        if(!channel) return;
         const embed = new Discord.MessageEmbed()
             .setColor('#0067a3')
             .setTitle(`***Bye bye!***`)
             .setDescription(`See you later, **${member.displayName}**\nWe are ${member.guild.memberCount} members now!`)
             .setThumbnail(`${member.guild.iconURL({format:'png'})}`)
-            .setFooter(`${member.displayName}`,`${member.user.displayAvatarURL()}`)
+            .setFooter(`${member.user.username}`,`${member.user.displayAvatarURL()}`)
             .setTimestamp()
         channel.send(embed);
 });
