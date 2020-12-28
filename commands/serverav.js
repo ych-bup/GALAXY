@@ -5,7 +5,7 @@ exports.run = async(client, message, args) => {
     const embed = new Discord.MessageEmbed()
     .setColor('RANDOM')
     .setDescription(`**${message.guild.name}**'s icon!`)
-    .setImage(message.guild.iconURL({format: 'png', size: 1024}))
+    .setImage(message.guild.iconURL({format: 'png', size: 1024, dynamic: true}))
     .setTimestamp()
     message.channel.send(embed);
 }
