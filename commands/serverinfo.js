@@ -5,7 +5,7 @@ exports.run = async(client, message, args) => {
     const embed = new Discord.MessageEmbed()
     .setColor('#ffc0cb')
     .setAuthor(`${message.author.username}`, `${message.author.displayAvatarURL()}`)
-    .setThumbnail(message.guild.iconURL({ format: 'png', dynamic:true}))
+    .setThumbnail(message.guild.iconURL({ format: 'png'}))
     .addFields(
         { name: '**Server Name**', value: `${message.guild.name}`,inline : true},
         { name: '**Member Count**', value: `${message.guild.memberCount}`,inline : true},
