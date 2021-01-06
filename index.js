@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const client = new Discord.Client();
 
-mongoose.connect("mongodb+srv://ych-bup:ych-bup@cluster0.oyp5x.mongodb.net/<dbname>?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(`${process.env.MONGODB}`, { useNewUrlParser: true, useUnifiedTopology: true});
 
 mongoose.connection.on('connecting', function () { console.log('MongoDB: Trying to connect to MongoDB');});
 mongoose.connection.on('connected', function () { console.log('MongoDB: Successfully connected to MongoDB');});
