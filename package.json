@@ -25,6 +25,7 @@
     "math": "0.0.3",
     "moment": "^2.29.1",
     "mongoose": "^5.10.15",
+    "music-info": "^1.1.2",
     "wolfram-alpha-node": "0.0.3"
   }
 }
