@@ -6,7 +6,7 @@ exports.run = async(client, message, args) => {
     const album = message.content.split("/").slice(4).join(" ");
 
     if(message.content.split(" ").slice(1) == 'song'){
-        try{musicinfo.searchSong({title: title, artist: artist, album: album},1000).then(message.channel.send)}
+        try{musicinfo.searchSong({title: title, artist: artist, album: album},1000).then(console.log)}
         catch(err){message.channel.send(':negative_squared_cross_mark: Failed.'), console.log(err)}
     }
     if(message.content.split(" ").slice(1) == 'album'){}
