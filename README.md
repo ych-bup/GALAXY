@@ -19,3 +19,11 @@
         </a>
     </p>
 </div>
+
+## Introduce
+
+- This is multi-purpose Discord Chat Bot.
+- Developed with Node.js
+- Has a lot of function
+- Developed by **YCH-BUP**
+- Library : Discord.js
