@@ -21,5 +21,7 @@
 </div>
 
 <h1>Introduce</h1>
-<p>
-    <span>This is multi-purpose discord chat bot.</span>
+<p display="flex" flex-direction="column">
+    <h5>This is multi-purpose discord chat bot.</h5>
+    <h5>Developed With Node.js</h5>
+</p>
