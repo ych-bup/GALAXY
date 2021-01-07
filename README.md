@@ -48,5 +48,5 @@
     </p>
 </div>
 
-- Github
-> ![@ych-bup](https://github.com/ych-bup)
+> Github [@ych-bup](https://github.com/ych-bup)
+> Instagram [@ych.bup](https://www.instagram.com/ych.bup)
