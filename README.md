@@ -21,3 +21,5 @@
 </div>
 
 <h1>Introduce</h1>
+<p>
+    <span>This is multi-purpose discord chat bot.</span>
