@@ -30,11 +30,11 @@
 
 ## Function
 
-- Moderation
+- **Moderation**
     * Kick, Ban, Mute, etc ..
-- Fun
+- **Fun**
     * Jackpot, Couple Maker, etc ..
-- Text
+- **Text**
     * Calculation, Search, ping, etc ..
-- Info
+- **Info**
     * Userinfo, Serverinfo, avatar, etc ..
