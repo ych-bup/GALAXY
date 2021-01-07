@@ -27,3 +27,14 @@
 - Has a lot of function
 - Developed by **YCH-BUP**
 - Library : Discord.js
+
+## Function
+
+- Moderation
+    * Kick, Ban, Mute, etc ..
+- Fun
+    * Jackpot, Couple Maker, etc ..
+- Text
+    * Calculation, Search, ping, etc ..
+- Info
+    * Userinfo, Serverinfo, avatar, etc ..
