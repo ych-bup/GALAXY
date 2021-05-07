@@ -8,11 +8,8 @@ exports.run = async(client, message, args) => {
     var hangang_time;
     var hangang_station;
 
-    request({
-        url: hangang_url,
-        json: true,
-    }, function (err,res, body) {
-        if(!err && res.statusCode === 200) {
+    request(hangang_url, function(error,response,body) {
+        if(!error && response.statusCode == 200) {
             var obj = JSON.parse(body);
             console.log(obj);
         }
