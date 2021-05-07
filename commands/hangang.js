@@ -14,7 +14,7 @@ exports.run = async(client, message, args) => {
     }, function (err,res, body) {
         if(!err && res.statusCode === 200) {
             var obj = JSON.parse(body);
-            hangang_temp = obj.temp;
+            hangang_temp = body;
             hangang_time = obj.time;
             hangang_station = obj.station;
         }
