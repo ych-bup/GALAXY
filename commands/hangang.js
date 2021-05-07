@@ -13,13 +13,8 @@ exports.run = async(client, message, args) => {
         json: true,
     }, function (err,res, body) {
         if(!err && res.statusCode === 200) {
-            var obj = JSON.parse(body);
-            hangang_temp = body;
-            hangang_time = obj.time;
-            hangang_station = obj.station;
+            console.log(body);
         }
     })
-
-    message.channel.send(hangang_temp);
 
 }
