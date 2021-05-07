@@ -11,7 +11,7 @@ exports.run = async(client, message, args) => {
     request(hangang_url, function(error,response,body) {
         if(!error && response.statusCode == 200) {
             var obj = JSON.parse(body);
-            console.log(obj);
+            console.log(obj.temp);
         }
     })
 
