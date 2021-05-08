@@ -14,7 +14,7 @@ exports.run = async(client, message, args) => {
                 .setColor('RANDOM')
                 .setTitle(`**${obj.temp}℃**`)
                 .setDescription(`Observed on **${obj.station}** at **${obj.time}**`)
-                .setThumbnail('https://cdn.blog.ivlis.kr/data/other-services/hangang.ivlis.kr-bg.jpg')
+                .setImage('https://cdn.blog.ivlis.kr/data/other-services/hangang.ivlis.kr-bg.jpg')
                 .setFooter('힘내요!!')
 
             message.channel.send(hangang_embed);
