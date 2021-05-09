@@ -30,7 +30,7 @@
 
 ## Invite
 
-https://discord.com/api/oauth2/authorize?client_id=780408136460402738&permissions=8&scope=bot
+[Click here!](https://discord.com/api/oauth2/authorize?client_id=780408136460402738&permissions=8&scope=bot)
 
 ## Function
 
