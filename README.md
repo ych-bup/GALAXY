@@ -28,6 +28,10 @@
 - Developed by **YCH-BUP**
 - Library : Discord.js
 
+## Invite
+
+https://discord.com/api/oauth2/authorize?client_id=780408136460402738&permissions=8&scope=bot
+
 ## Function
 
 - **Moderation**
