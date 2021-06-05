@@ -28,6 +28,7 @@
     "mongoose": "^5.10.15",
     "music-info": "^1.1.2",
     "request": "^2.88.2",
-    "wolfram-alpha-node": "0.0.3"
+    "wolfram-alpha-node": "0.0.3",
+    "lotash": ">=4.17.21"
   }
 }
