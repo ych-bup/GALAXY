@@ -1,7 +1,7 @@
 {
   "name": "ich.bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "multi-purpose discord chat bot",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
