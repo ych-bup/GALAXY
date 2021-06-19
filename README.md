@@ -47,7 +47,7 @@
 
 <div align="left">
     <p>
-        <img src="https://avatars.githubusercontent.com/u/67253200?s=460&u=e4b9b936e41c78e772a154c8fd40ebf1166d4fc6&v=4" width="8%" height="8%">
+        <img src="https://avatars.githubusercontent.com/u/67253200?s=460&u=e4b9b936e41c78e772a154c8fd40ebf1166d4fc6&v=4" width="5%" height="5%">
         <h3>Chanho Yoon (ych-bup)</h3>
     </p>
 </div>
