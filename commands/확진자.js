@@ -3,6 +3,9 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 
 exports.run = async(client, message, args) => {
+    var coronaKor;
+    var coronaInt;
+
     const getHtml = async () => {
         try {
             return await axios.get("http://ncov.mohw.go.kr/");
@@ -17,14 +20,7 @@ exports.run = async(client, message, args) => {
             const $ = cheerio.load(html.data);
             const $bodylist = $("div.wrap.nj div.mainlive_container div.container div div.liveboard_layout div.liveNum_today_new div.datalist ul").children("li");
 
-            $bodylist.each(function(i, elem) {
-                ulList[i] = {
-                    title: $(this).find('span.data').text()
-                };
-            });
-
-            const data = ulList.filter(n=>n.title);
-            return data;
-        })
-        .then(res => message.channel.send(res));
+            coronaKor = $(this).find('span.data').text();
+            message.channel.send(coronaKor);
+        });
 }
