@@ -20,7 +20,8 @@ exports.run = async(client, message, args) => {
             const $ = cheerio.load(html.data);
             const $bodylist = $("div.wrap.nj div.mainlive_container div.container div div.liveboard_layout div.liveNum_today_new div.datalist ul").children("li");
 
-            coronaKor = $(this).find('span.data').text();
-            message.channel.send(coronaKor);
+            $bodylist.each(function(i,elem) {
+                coronaKor = $(this).find('span.data').text();
+            })
         });
 }
