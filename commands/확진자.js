@@ -22,9 +22,6 @@ exports.run = async(client, message, args) => {
                     title: $(this).find('span.data').text()
                 };
             });
-
-            const data = ulList.filter(n=>n.title);
-            return data;
         })
-        .then(res => console.log(res));
+        .then(res => message.channel.send(res));
 }
