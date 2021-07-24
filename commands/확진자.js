@@ -23,7 +23,8 @@ exports.run = async(client, message, args) => {
                 };
             });
 
-            return ulList;
+            const data = ulList.filter(n=>n.title);
+            return data;
         })
         .then(res => message.channel.send(res));
 }
