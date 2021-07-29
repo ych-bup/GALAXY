@@ -23,6 +23,5 @@ exports.run = async(client, message, args) => {
             $bodylist.each(function(i,elem) {
                 coronaKor = $(this).find('span.data').text();
             })
-        })
-        .then(console.log(coronaKor));
+        });
 }
