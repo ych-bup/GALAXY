@@ -104,7 +104,6 @@ client.on('ready', async () => {
 });
 
 client.on('guildMemberAdd', async member => {
-        if(member.guild.id == '749595288280498188') return;
         const channel = member.guild.channels.cache.find(ch => ch.name === trafficChannel);
         if(!channel) return;
         const embed = new Discord.MessageEmbed()
@@ -117,7 +116,6 @@ client.on('guildMemberAdd', async member => {
 });
 
 client.on('guildMemberRemove', async member => {
-        if(member.guild.id == '749595288280498188') return;
         const channel = member.guild.channels.cache.find(ch => ch.name === trafficChannel);
         if(!channel) return;
         const embed = new Discord.MessageEmbed()
