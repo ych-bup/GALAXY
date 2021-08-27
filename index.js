@@ -83,14 +83,6 @@ client.on('message', async message => {
     }
 });
 
-client.on('message', async message => {
-    if(message.author.bot) return;
-    if(message.content.startsWith(prefix + "test")){
-        message.channel.send('success');
-    }
-})
-
-
 client.commands = new Enmap();
 
 client.on('ready', async () => {
