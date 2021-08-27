@@ -49,6 +49,13 @@ global.warnuser = warnuser
 
 client.on('message', async message => {
     if(message.author.bot) return;
+    if(message.content.startsWith(prefix + "test")){
+        message.channel.send('success');
+    }
+})
+
+client.on('message', async message => {
+    if(message.author.bot) return;
 
 
 
