@@ -62,7 +62,7 @@ client.on('message', async message => {
     const prefixmap = await guildprefix.findOne({ serverid: message.guild.id }) || { prefix: '%' };
     let prefix = prefixmap.prefix
     global.prefix = prefix
-
+ 
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
 
