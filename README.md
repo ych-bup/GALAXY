@@ -1,6 +1,6 @@
 <div align="center">
     <img src="https://cdn.discordapp.com/attachments/780715659901796352/796712059659091998/Fotoram.io_1.png" height="16%" width="16%">
-    <h1>Ich.BOT</h1>
+    <h1>GALAXY</h1>
     <p>
         <a href="">
             <img src="https://img.shields.io/github/stars/ych-bup/Ich.BOT?style=flat-square&logo=github">
