@@ -43,6 +43,8 @@ const warnuser = mongoose.model('warnuser', new mongoose.Schema({
 
 }))
 
+let prefix;
+
 global.customStatus = customStatus
 global.guildprefix = guildprefix
 global.warnuser = warnuser
@@ -60,7 +62,7 @@ client.on('message', async message => {
 
 
     const prefixmap = await guildprefix.findOne({ serverid: message.guild.id }) || { prefix: '%' };
-    let prefix = prefixmap.prefix
+    prefix = prefixmap.prefix
     global.prefix = prefix
  
     const args = message.content.slice(prefix.length).trim().split(/ +/);
