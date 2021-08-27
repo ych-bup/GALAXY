@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 exports.run = async(client, message, args) => {
-    const args1 = message.content.split(" ").slice(1);
+    const args1 = message.content.split(" ").slice(1).join(" ");
     const channelname = message.guild.channels.cache.find(ch => ch.name === args1);
     
     if(!args1) return message.channel.send(":x: You don't enter channel name!");
