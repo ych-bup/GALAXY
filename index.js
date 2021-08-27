@@ -41,23 +41,32 @@ const warnuser = mongoose.model('warnuser', new mongoose.Schema({
     type: String,
     reason: String
 
-}))
+}));
+
+const traffic = mongoose.model('traffic', new mongoose.Schema({
+    serverid: String,
+    channelName: String
+}));
 
 let prefix;
+let trafficChannel;
 
 global.customStatus = customStatus
 global.guildprefix = guildprefix
 global.warnuser = warnuser
+global.traffic = traffic
 
 
 client.on('message', async message => {
     if(message.author.bot) return;
 
 
-
+    const trafChannel = await traffic.findOne({ serverid: message.guild.id }) || { channelName: 'traffic'};
     const prefixmap = await guildprefix.findOne({ serverid: message.guild.id }) || { prefix: '%' };
     prefix = prefixmap.prefix
+    trafficChannel = trafChannel.channelName;
     global.prefix = prefix
+    global.trafficChannel = trafficChannel;
  
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
@@ -96,7 +105,7 @@ client.on('ready', async () => {
 
 client.on('guildMemberAdd', async member => {
         if(member.guild.id == '749595288280498188') return;
-        const channel = member.guild.channels.cache.find(ch => ch.name === 'traffic');
+        const channel = member.guild.channels.cache.find(ch => ch.name === trafficChannel);
         if(!channel) return;
         const embed = new Discord.MessageEmbed()
             .setColor('#FF4500')
@@ -109,7 +118,7 @@ client.on('guildMemberAdd', async member => {
 
 client.on('guildMemberRemove', async member => {
         if(member.guild.id == '749595288280498188') return;
-        const channel = member.guild.channels.cache.find(ch => ch.name === 'traffic');
+        const channel = member.guild.channels.cache.find(ch => ch.name === trafficChannel);
         if(!channel) return;
         const embed = new Discord.MessageEmbed()
             .setColor('#0067a3')
