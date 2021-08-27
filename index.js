@@ -49,12 +49,6 @@ global.customStatus = customStatus
 global.guildprefix = guildprefix
 global.warnuser = warnuser
 
-client.on('message', async message => {
-    if(message.author.bot) return;
-    if(message.content.startsWith(prefix + "test")){
-        message.channel.send('success');
-    }
-})
 
 client.on('message', async message => {
     if(message.author.bot) return;
@@ -88,6 +82,14 @@ client.on('message', async message => {
         client.users.cache.get('602011789408075777').send('\`\`\`' + err + '\`\`\`');
     }
 });
+
+client.on('message', async message => {
+    if(message.author.bot) return;
+    if(message.content.startsWith(prefix + "test")){
+        message.channel.send('success');
+    }
+})
+
 
 client.commands = new Enmap();
 
