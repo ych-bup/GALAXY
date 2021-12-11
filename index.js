@@ -104,7 +104,7 @@ client.on('ready', async () => {
 });
 
 client.on('guildMemberAdd', async member => {
-        const channel = member.guild.channels.cache.find(ch => ch.name === trafficChannel);
+        const channel = member.guild.channels.cache.find(ch => ch.name === "traffic");
         if(!channel) return;
         const embed = new Discord.MessageEmbed()
             .setColor('#FF4500')
@@ -116,7 +116,7 @@ client.on('guildMemberAdd', async member => {
 });
 
 client.on('guildMemberRemove', async member => {
-        const channel = member.guild.channels.cache.find(ch => ch.name === trafficChannel);
+        const channel = member.guild.channels.cache.find(ch => ch.name === "traffic");
         if(!channel) return;
         const embed = new Discord.MessageEmbed()
             .setColor('#0067a3')
